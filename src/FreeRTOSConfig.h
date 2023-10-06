@@ -1,8 +1,13 @@
 /*
+<<<<<<< HEAD
+ * FreeRTOS Kernel V10.4.3
+ * Copyright (C) 2020 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
+=======
  * FreeRTOS Kernel V10.5.1+
  * Copyright (C) 2021 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
  *
  * SPDX-License-Identifier: MIT
+>>>>>>> c98079f67fb201d552593f88a6117185e7aa2647
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -43,11 +48,25 @@
  * See https://www.freertos.org/a00110.html.
  *----------------------------------------------------------*/
 
+<<<<<<< HEAD
+// And on to the things the same no matter the AVR type...
+#define configUSE_PREEMPTION                1
+
+// Define configUSE_IDLE_HOOK
+#ifndef configUSE_IDLE_HOOK
+    #define configUSE_IDLE_HOOK             1
+#endif
+
+#define configUSE_TICK_HOOK                 1
+#define configCPU_CLOCK_HZ                  ( ( uint32_t ) F_CPU )          // This F_CPU variable set by the environment
+#define configMAX_PRIORITIES                8
+=======
 /* And on to the things the same no matter the AVR type... */
 #define configUSE_PREEMPTION                1
 
 #define configCPU_CLOCK_HZ                  ( ( uint32_t ) F_CPU )          // This F_CPU variable set by the environment
 #define configMAX_PRIORITIES                4
+>>>>>>> c98079f67fb201d552593f88a6117185e7aa2647
 #define configIDLE_SHOULD_YIELD             1
 #define configMINIMAL_STACK_SIZE            ( 192 )
 #define configMAX_TASK_NAME_LEN             ( 8 )
@@ -56,7 +75,11 @@
 #define configCHECK_FOR_STACK_OVERFLOW      1
 
 #define configUSE_TRACE_FACILITY            0
+<<<<<<< HEAD
+#define configUSE_16_BIT_TICKS              1
+=======
 #define configTICK_TYPE_WIDTH_IN_BITS       TICK_TYPE_WIDTH_16_BITS
+>>>>>>> c98079f67fb201d552593f88a6117185e7aa2647
 
 #define configUSE_MUTEXES                   1
 #define configUSE_RECURSIVE_MUTEXES         1
@@ -68,6 +91,18 @@
 #define configSUPPORT_DYNAMIC_ALLOCATION    1
 #define configSUPPORT_STATIC_ALLOCATION     0
 
+<<<<<<< HEAD
+/* Timer definitions. */
+#define configUSE_TIMERS                    1
+#define configTIMER_TASK_PRIORITY           ( ( UBaseType_t ) 3 )
+#define configTIMER_QUEUE_LENGTH            ( ( UBaseType_t ) 10 )
+#define configTIMER_TASK_STACK_DEPTH        ( 85 )
+
+/* Co-routine definitions. */
+#define configUSE_CO_ROUTINES               0
+#define configMAX_CO_ROUTINE_PRIORITIES     ( (UBaseType_t ) 2 )
+
+=======
 #define configUSE_IDLE_HOOK                 1
 #define configUSE_TICK_HOOK                 0
 
@@ -81,6 +116,7 @@
 #define configTIMER_QUEUE_LENGTH            ( 10 )
 #define configTIMER_TASK_STACK_DEPTH        ( 85 )
 
+>>>>>>> c98079f67fb201d552593f88a6117185e7aa2647
 /* Set the stack depth type to be uint16_t. */
 #define configSTACK_DEPTH_TYPE              uint16_t
 
@@ -99,13 +135,22 @@ to exclude the API function. */
 #define INCLUDE_xTaskDelayUntil                 1
 #define INCLUDE_vTaskDelay                      1
 #define INCLUDE_xTaskGetSchedulerState          0
+<<<<<<< HEAD
+#define INCLUDE_xTaskGetIdleTaskHandle          1 // create an idle task handle.
+=======
 #define INCLUDE_xTaskGetIdleTaskHandle          0 // create an idle task handle.
+>>>>>>> c98079f67fb201d552593f88a6117185e7aa2647
 #define INCLUDE_xTaskGetCurrentTaskHandle       1
 #define INCLUDE_uxTaskGetStackHighWaterMark     1
 
 #define configMAX(a,b)  ({ __typeof__ (a) _a = (a); __typeof__ (b) _b = (b); _a > _b ? _a : _b; })
 #define configMIN(a,b)  ({ __typeof__ (a) _a = (a); __typeof__ (b) _b = (b); _a < _b ? _a : _b; })
 
+<<<<<<< HEAD
+#define configNUM_THREAD_LOCAL_STORAGE_POINTERS 1
+
+=======
+>>>>>>> c98079f67fb201d552593f88a6117185e7aa2647
 /**
  * configASSERT macro: https://www.freertos.org/a00110.html#configASSERT
  */
